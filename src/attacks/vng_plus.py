@@ -21,15 +21,16 @@ class VNGPlus:
     Uses sklearn GaussianNB on burst histogram features + statistics
     """
 
-    def __init__(self, interval: int = 5000):
+    def __init__(self, interval: int = 3000, var_smoothing: float = 1e-9):
         """
         Initialize VNG++ attack
 
         Args:
-            interval: Burst histogram bin width (paper tests 1000-10000)
+            interval: Burst histogram bin width (optimal=3000 from sweep)
+            var_smoothing: GaussianNB variance smoothing parameter
         """
         self.interval = interval
-        self.model = GaussianNB()
+        self.model = GaussianNB(var_smoothing=var_smoothing)
         self.trained = False
 
     def fit(self, X_train: List, y_train: np.ndarray):
