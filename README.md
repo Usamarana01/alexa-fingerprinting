@@ -91,6 +91,3 @@ This will:
 └── requirements.txt        # Python dependencies
 ```
 
-## 📝 Reporting
--   **Methodology Report**: See `DATA_COLLECTION_REPORT.md` for details on the data collection process.
--   **Full Project Report**: See `input.md` (Draft).
